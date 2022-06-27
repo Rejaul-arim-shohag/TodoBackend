@@ -14,6 +14,4 @@ router.get("/deleteTodo/:id",authVerifyMiddleware,TodoController.DeleteTodo);
 router.get("/readTodoById/:id",authVerifyMiddleware,TodoController.ReadTodoById);
 router.get("/readTodoByUserId",authVerifyMiddleware,TodoController.ReadTodoByUserId);
 
-
-
 module.exports=router;

@@ -33,14 +33,14 @@ const limiter = ratelimit({
 app.use(limiter);
 
 //databse connection settings
-// const uri="mongodb+srv://<username>:<password>@cluster0.fmftb.mongodb.net/CRUD?retryWrites=true&w=majority";
-// const options = {
-//     user:"crudUser",
-//     pass:"FJsM!rE.aprsi82",
-//     autoIndex:true,
-// };
-const uri = "mongodb://127.0.0.1:27017/Todo"; 
-mongoose.connect(uri, (err)=>{
+const uri="mongodb+srv://<username>:<password>@cluster0.fmftb.mongodb.net/CRUD?retryWrites=true&w=majority";
+const options = {
+    user:"crudUser",
+    pass:"cKCvJBxPceRvqkmp",
+    autoIndex:true,
+};
+// const uri = "mongodb://127.0.0.1:27017/Todo"; 
+mongoose.connect(uri,options, (err)=>{
     if(!err){
         console.log("Database connection successfully")
     }
@@ -50,7 +50,5 @@ mongoose.connect(uri, (err)=>{
 });
 //managing backend routing 
 app.use("/api/v1", router);
-
-
 
 module.exports = app;

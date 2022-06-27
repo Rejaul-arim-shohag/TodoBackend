@@ -4,11 +4,11 @@ const jwt = require('jsonwebtoken');
 
 //user create Controller
 exports.CreateUser = async (req, res) => {
-    const hashPassword = await bcrypt.hash(req.body.Password, 10)
+    // const hashPassword = await bcrypt.hash(req.body.Password, 10)
     const data = {
         UserName:req.body.UserName,
         Email: req.body.Email,
-        Password: hashPassword,
+        Password:req.body.Password 
     
     };
     UsersModel.create(data,(err, data) => {
