@@ -1,10 +1,9 @@
 const  mongoose=require('mongoose');
 const DataSchema=mongoose.Schema({
-    UserName:{type:String, required:true, unique:true},
+    UserName:{type:String, required:true},
     UserId:{type:Number, default:function(){return Math.floor(Date.now()*1000)}},
     Email:{
                 type:String,
-                unique:true,
                 required:true,
                 validate:{
                     validator:(v)=>{
