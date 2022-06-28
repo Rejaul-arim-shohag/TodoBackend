@@ -9,7 +9,6 @@ exports.CreateUser = async (req, res) => {
         UserName:req.body.UserName,
         Email: req.body.Email,
         Password:req.body.Password 
-    
     };
     UsersModel.create(data,(err, data) => {
         if(!err){

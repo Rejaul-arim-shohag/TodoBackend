@@ -5,12 +5,12 @@ const DataSchema=mongoose.Schema({
     Email:{
                 type:String,
                 required:true,
-                validate:{
-                    validator:(v)=>{
-                        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
-                    },
-                    message: "Please enter a valid email"
-                }
+                // validate:{
+                //     validator:(v)=>{
+                //         return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(v);
+                //     },
+                //     message: "Please enter a valid email"
+                // }
                 },
     Password:{type:String},
     image:{type:String, default:""},

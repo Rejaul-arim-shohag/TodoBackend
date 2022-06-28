@@ -33,7 +33,7 @@ const limiter = ratelimit({
 app.use(limiter);
 
 //databse connection settings
-const uri="mongodb+srv://<username>:<password>@cluster0.fmftb.mongodb.net/CRUD?retryWrites=true&w=majority";
+const uri="mongodb+srv://<username>:<password>@cluster0.fmftb.mongodb.net/todo?retryWrites=true&w=majority";
 const options = {
     user:"crudUser",
     pass:"cKCvJBxPceRvqkmp",
