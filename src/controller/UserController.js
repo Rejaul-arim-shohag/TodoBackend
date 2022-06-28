@@ -66,17 +66,20 @@ exports.LoginUser = (req, res) => {
                 Email:data[0].Email,
                 UserId:data[0].UserId
             }
-            bcrypt.compare(req.body.Password, data[0].Password, (err, result) => {
-                if (err) {
-                    // console.log(err)
-                    res.status(401).json({ status: "fail", data: "Authentication fail" })
-                }
-                else {
-                    const token =  jwt.sign(
-                        payload ,"secret123", { expiresIn: "23h" })
-                        res.status(200).json({ "status": "login successfully", "token": token })
-                }
-            });
+            const token =  jwt.sign(
+                payload ,"secret123", { expiresIn: "23h" })
+                res.status(200).json({ "status": "login successfully", "token": token })
+            // bcrypt.compare(req.body.Password, data[0].Password, (err, result) => {
+            //     if (err) {
+            //         // console.log(err)
+            //         res.status(401).json({ status: "fail", data: "Authentication fail" })
+            //     }
+            //     else {
+            //         const token =  jwt.sign(
+            //             payload ,"secret123", { expiresIn: "23h" })
+            //             res.status(200).json({ "status": "login successfully", "token": token })
+            //     }
+            // });
         }
         else {
             res.status(401).json({ status: "fail", data: "user Unauthenticated" })
